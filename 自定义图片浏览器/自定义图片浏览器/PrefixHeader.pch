@@ -1,0 +1,461 @@
+//
+//  PrefixHeader.pch
+//  test
+//
+//  Created by 孙海平 on 16/5/20.
+//  Copyright © 2016年 孙海平. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+//#import "NSString+HXCategory.h"
+//#import "NSDictionary+HXCategory.h"
+//#import "UIColor+LCCategory.h"
+//#import "UITableViewCell+HXCategory.h"
+//#import "UISegmentedControl+Category.h"
+//#import "CallRecords+CoreDataProperties.h"
+//#import <UIImageView+WebCache.h>
+//#import <UIView+WebCache.h>
+//#import <UIButton+WebCache.h>
+//#import "HXWriteText.h"
+//#import "SipManager.h"
+//#import "HXMessageManager.h"
+//#import "LCAFManager.h"
+//#import "LCFMDBManager.h"
+//#import "LCHUDManager.h"
+//#import "LCTool.h"
+//#import "NSDate+Category.h"
+//#import "UIButton+HXCategory.h"
+//#import "UIScrollView+EmptyDataSet.h"
+//#import "MBProgressHUD.h"
+//#import "TKAlertCenter.h"
+#import "UIView+LCCategory.h"
+#import "Masonry.h"
+//#define CLIENTTYPE @"HX"
+//#define MEETINGSTR @"MetingMember"
+
+
+//#define DOMIAN_MY @"192.168.0.109:5060"
+//#define DOMIAN_MY @"192.168.0.48:5060"
+////#define DOMIAN_MY @"1.58.6.59:6066"
+//#define DOMIAN_MY @"113.9.29.218:6066"
+//#define DOMIAN_MY @"192.168.0.215:5080"
+//#define DOMIAN_MY @"58.87.73.47:5060"
+//#define SYSTEM_VERSION [[UIDevice currentDevice].systemVersion floatValue]
+//#define IPHONE_TYPE [HXgGetiPhoneType iphoneType]
+//#define LCLogFunc LCLog(@"%s", __func__)
+
+//#define BASE_IP @"https://192.168.0.66:7201/"
+//#define BASE_IP @"https://1.58.6.59:7201/"
+
+//#define BASE_URL @"http://192.168.0.6:8280/service/hxaction/"
+
+/********* 群组URL ********/
+//#define BASE_URL_G [NSString stringWithFormat:@"%@group",BASE_IP]
+//#define BASE_URL_M [NSString stringWithFormat:@"%@conf",BASE_IP]
+//#define BASE_URL_X [NSString stringWithFormat:@"%@teamwork/",BASE_IP]
+//#define BASE_URL_FS [NSString stringWithFormat:@"%@zuul/fileservice/",BASE_IP]
+//#define BASE_URL_IMGD [NSString stringWithFormat:@"%@imgdown/",BASE_IP]
+//#define BASE_URL_MSE [NSString stringWithFormat:@"%@message/",BASE_IP]
+//#define BASE_URL [NSString stringWithFormat:@"%@sso/useraction/",BASE_IP]
+//#define BASE_URL_NOLOGIN [NSString stringWithFormat:@"%@sso/useraction/nologin/",BASE_IP]
+//#define INFO [NSString stringWithFormat:@"userid=%@&machineid=%@&utel=%@",USERID,UUID,UTEL]
+//
+//#define YouMengKey @"589adcfe1061d2519f001977"
+//
+//
+//#define ApplicationDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+
+
+
+/********* 颜色 ********/
+//#define LCGlobalBg LCRGBColor(200, 200, 200)
+//
+////主题蓝色
+//#define mainBlueColor  kUIColorFromRGB(0x08a1ef)
+//
+//#define mainDeepBlueColor  kUIColorFromRGB(0x08a9ef)
+//
+////主题背景色
+//#define mainBgColor  kUIColorFromRGB(0xeeeff3)
+////主题浅灰色
+//#define mainLightGrayColor  kUIColorFromRGB(0x93999d)
+////分割线色
+//#define sepLineColor   kUIColorFromRGB(0xdedede)
+
+
+
+//[[UIApplication sharedApplication] keyWindow].tintColor
+
+//#define UPLOADIMAGECOLOR [UIColor colorWithWhite:0.5 alpha:0.7]
+//
+//#define  PingFangFont_light       @".PingFang-SC-Light"
+//#define  PingFangFont_regular       @".PingFang-SC-Regular"
+//#define  NumberFont       @"AppleSDGothicNeo-Bold"
+//#define  TimeFont    @"GillSans"
+//#define  otherTimeFont   @"TimesNewRomanPSMT"
+//#define  normalFont @"Helvetica Neue"
+//
+////GillSans-SemiBold
+////GujaratiSangamMN-Bold
+//
+//#define LINE_HEIGHT  (1 / [UIScreen mainScreen].scale)
+//
+////工高度适配
+//#define NAVIGATIONBAR_HEIGHT                     44
+//#define STATUSBAR_HEIGHT                         20
+//#define UI_BAR_HEIGHT        (NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT)
+////工具条宽度
+//#define TABBAR_HEIGHT  49.0f
+//
+//
+//#define ScreenBounds [UIScreen mainScreen].bounds
+
+//#define SELFVIEWH self.view.size.height
+//#define SELFVIEWW self.view.size.width
+//#define verificationCodeLength 4
+//#define VALUE 8
+
+/********* keyBoard ********/
+//#define HEIGHT_TABBAR       49      // 就是chatBox的高度
+//#define     CHATBOX_BUTTON_WIDTH        37
+//#define     HEIGHT_TEXTVIEW             HEIGHT_TABBAR * 0.74
+//#define     MAX_TEXTVIEW_HEIGHT         104
+
+
+
+
+/********* 文件地址 ********/
+//#define kDiscvoerVideoPath @"Download/Video"  // video子路径
+//#define kChatVideoPath @"Chat/Video"  // video子路径
+//#define kVideoType @".mp4"        // video类型
+//#define kRecoderType @".wav"
+
+/********* 个人信息 ********/
+//#define PUBLICKEY [[NSUserDefaults standardUserDefaults] getPublicKey]
+//#define VERSION [[UIDevice currentDevice] systemVersion]
+//
+//#define USERNAME [[NSUserDefaults standardUserDefaults]objectForKey:@"username"]
+//#define USERHEADIMAGE [[NSUserDefaults standardUserDefaults]objectForKey:@"avatar"]
+//#define UTEL [[NSUserDefaults standardUserDefaults]objectForKey:@"utel"]
+//#define AREACODE [[NSUserDefaults standardUserDefaults]objectForKey:@"areaCode"]
+//#define AREA [[NSUserDefaults standardUserDefaults]objectForKey:@"area"]
+//#define HEADIMAGE [[NSUserDefaults standardUserDefaults]objectForKey:@"avatar"]
+//#define SIPPASS [[NSUserDefaults standardUserDefaults]objectForKey:@"sippass"]
+//#define ISLOGIN [[NSUserDefaults standardUserDefaults]objectForKey:@"isLogin"]
+
+
+/********* PingFang-SC-Regular字体 ********/
+
+//#define APPFont24 [UIFont fontWithName:@".PingFang-SC-Regular" size:24]
+//#define APPFont20 [UIFont fontWithName:@".PingFang-SC-Regular" size:20]
+//#define APPFont18 [UIFont fontWithName:@".PingFang-SC-Regular" size:18]
+//#define APPFont17 [UIFont fontWithName:@".PingFang-SC-Regular" size:17]
+//#define APPFont16 [UIFont fontWithName:@".PingFang-SC-Regular" size:16]
+//#define APPFont15 [UIFont fontWithName:@".PingFang-SC-Regular" size:15]
+//#define APPFont14 [UIFont fontWithName:@".PingFang-SC-Regular" size:14]
+//#define APPFont13 [UIFont fontWithName:@".PingFang-SC-Regular" size:13]
+//#define APPFont12 [UIFont fontWithName:@".PingFang-SC-Regular" size:12]
+//#define APPFont10 [UIFont fontWithName:@".PingFang-SC-Regular" size:10]
+
+
+
+/********* 字符长度 ********/
+
+//#define StringLength30 30
+//#define StringLength200 200
+
+
+
+/********* 图片 ********/
+//#define EMPTYIMAGE [UIImage imageNamed:@"empty"]
+//#define PLACEHOLDERIMAGE [UIImage imageNamed:@"touxiang"]
+
+/********* 其他 ********/
+
+
+#define MAXSELECTPHOTO 9
+#define MAXSELECTVIDEO 1
+
+#define WS(weakSelf) __unsafe_unretained __typeof(&*self)weakSelf = self;
+#define kStrongSelf(type) __strong typeof(type) type = weak##type;
+// 判空处理
+//是否为空或是[NSNull null]
+#define NotNilAndNull(_ref)  (((_ref) != nil) && (![(_ref) isEqual:[NSNull null]]))
+#define IsNilOrNull(_ref)   (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]))
+
+//字符串是否为空
+#define IsStrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref)isEqualToString:@""]))
+//数组是否为空
+#define IsArrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref) count] == 0))
+//字典是否为空
+#define IsDicEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref) count] == 0))
+
+#define LCPJ_LOG(level,arg)	do { \
+if (level <= pj_log_get_level()) \
+pj_log_wrapper_##level(arg); \
+} while (0)
+
+//#define THIS_FILE "APP"
+#define current_acc	pjsua_acc_get_default()
+#define MYUUID [[NSUserDefaults standardUserDefaults]objectForKey:@"UUID"]
+
+#endif
+
+#ifdef DEBUG // 调试状态, 打开LOG功能
+#define LCLog(...) NSLog(__VA_ARGS__)
+#else // 发布状态, 关闭LOG功能
+#define LCLog(...)
+#endif
+//通知
+#define HXREFRESHMEETINGS @"HXRefreshMeetings"
+/********************************* *************************/
+#define HXUserDefaults [NSUserDefaults standardUserDefaults]
+//#import "IQKeyboardManager.h"
+//#import "HXgGetiPhoneType.h"
+//#import "NSUserDefaults+HXCategory.h"
+//#import "MLTransition.h"    //手势返回
+//#import "AppDelegate.h"
+//#import "UIView+LCCategory.h"
+//#import "UIImage+LCCategory.h"
+//#import "Masonry.h"
+//#import "HXBaseViewController.h"
+//#import "HXLoginBaseViewController.h"
+//#import "SDWebImageManager.h"
+//#import "HXSystemManager.h"
+//#import "HXHUD.h"
+//#import "HXRequestBaseEntity.h"
+//#import "HXResponseBaseEntity.h"
+//#import "HXFileManager.h"                       //文件管理类
+//#import "UIScrollView+EmptyDataSet.h"           //tableView 空数据提示三方
+//#import "UIImageView+WebCache.h"
+//#import "BFPaperButton.h"
+//#import "NSObject+HXCategory.h"
+
+
+/********* URL ********/
+//#define BASE_IP @"https://113.9.29.218:7201/"
+
+#define BaseURL @"https://192.168.0.66:13201/"
+//#define BaseURL @"https://1.58.124.141:13201/"
+#define QRURL @"http://www.haoxin.cn"
+#define DOMIAN_MY @"192.168.0.48:5060"
+#define OPEN_FILE_URL @"stg/v1/filedownload/"
+
+/********* 颜色 ********/
+
+//按钮按下的浅蓝色
+#define pressWathetBlue  kUIColorFromRGB(0xbc7f5)
+
+//按钮按下的深蓝色
+#define pressDarkBlue  kUIColorFromRGB(0x08a1ef)
+
+//主题蓝色
+#define mainBlueColor  kUIColorFromRGB(0x08a1ef)
+
+//不可点击的颜色
+#define canNotPressColor kUIColorFromRGB(0x5ec6fb)
+
+//主题背景色
+#define mainBgColor  kUIColorFromRGB(0xeeeff3)
+
+#define APPColor [[HXSystemManager share] getSubjectColor]
+
+//分割线色
+#define sepLineColor kUIColorFromRGB(0xf8f5f5)
+
+//搜索文字颜色
+#define searchTextColor kUIColorFromRGB(0xbfbfbf)
+
+//文字的黑色
+#define textblackColor kUIColorFromRGB(0x1b1b1b)
+
+//subtitleColor
+#define mainLightGrayColor  kUIColorFromRGB(0x93999d)
+
+//红色背景
+#define redBackgroundColor kUIColorFromRGB(0xfa5c5c)
+
+
+/**
+ * @brief 生成颜色
+ *
+ * @param r  0-255
+ *
+ * @param g  0-255
+ *
+ * @param b  0-255
+ * @return 颜色
+ */
+#define LCRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define RGB_COLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+//背景颜色转换
+#define kUIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define kUIColorFromRGBAndAlpha(rgbValue,alphaValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
+
+
+
+
+/********* 图片 ********/
+
+#define defaultAvatar [UIImage imageNamed:@"hud"]
+
+
+
+
+/********* 字体 ********/
+
+#define APPFont24 [UIFont systemFontOfSize:adaptWidth(24)]
+#define APPFont20 [UIFont systemFontOfSize:adaptWidth(20)]
+#define APPFont18 [UIFont systemFontOfSize:adaptWidth(18)]
+#define APPFont17 [UIFont systemFontOfSize:adaptWidth(17)]
+#define APPFont16 [UIFont systemFontOfSize:adaptWidth(16)]
+#define APPFont15 [UIFont systemFontOfSize:adaptWidth(15)]
+#define APPFont14 [UIFont systemFontOfSize:adaptWidth(14)]
+#define APPFont13 [UIFont systemFontOfSize:adaptWidth(13)]
+#define APPFont12 [UIFont systemFontOfSize:adaptWidth(12)]
+#define APPFont11 [UIFont systemFontOfSize:adaptWidth(11)]
+#define APPFont10 [UIFont systemFontOfSize:adaptWidth(10)]
+#define APPFont9 [UIFont systemFontOfSize:adaptWidth(9)]
+#define APPFont8 [UIFont systemFontOfSize:adaptWidth(8)]
+
+/********* 视频 ********/
+#define videwViewH HEIGHT_SCREEN * 0.64 // 录制视频视图高度
+#define videwViewX HEIGHT_SCREEN * 0.36 // 录制视频视图X
+#define RECORD_MAX_TIME 10.0           //最长录制时间
+
+
+/********* 多语言支持 ********/
+#define GetSysStr(key) [[HXSystemManager share] getlanguagesWithKey:(key)]
+
+
+/********* UserDefaults ********/
+#define USERID [HXUserDefaults getUserID]
+
+#define USERNAME [HXUserDefaults getUserName]
+#define USERTel [HXUserDefaults getTel]
+#define USERAvatar  [HXUserDefaults getUserAvatar]
+
+
+/********* 正则表达式 ********/
+
+
+#define telPattern @"^1+[3578]+\\d{9}"
+
+#define passwordPattern @"^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{6,20}"
+
+
+/********* 系统尺寸 ********/
+
+#define SCREENH [[UIScreen mainScreen] bounds].size.height
+#define SCREENW [[UIScreen mainScreen] bounds].size.width
+
+#define adaptWidth(_float) (int)(_float * SCREENW/ 375.f)
+
+//#define adaptWidth(_float) [[HXSystemManager share] calculatePercentage:_float]
+
+#define MAXHEIGHT 141     //登录最大高度
+#define MINHEIGHT 64      //登录最小高度
+
+/********* 系统版本 ********/
+
+#define IPHONE_TYPE [HXgGetiPhoneType iphoneType]
+#define SYSTEM_VERSION [[UIDevice currentDevice].systemVersion floatValue]
+#endif /* PrefixHeader_pch */
+
+
+
+/********* 通知名称 ********/
+
+//好友通知
+#define FriendRequest @"FriendRequest"
+//好友请求通知
+#define FriendAcceptRequest @"FriendAcceptRequest"
+//用户策略更新通知
+#define UserSettingUpdate @"UserSettingUpdate"
+
+//下载进度通知
+#define DownLoadFileProgressNotification @"DownLoadFileNotification"
+
+//下载状态通知
+#define DownLoadFileStateNotification @"DownLoadFileStateNotification"
+
+
+/********* 会议解散 ********/
+#define MeetingDisbanded @"MeetingDisbanded"
+
+/********* 预约会议开始时间到达通知 ********/
+#define MeetingTime @"MeetingTime"
+
+/********* 会议静音 ********/
+#define MeetingMute @"MeetingMute"
+
+/********* 会议取消静音 ********/
+#define MeetingCancelMute @"MeetingCancelMute"
+
+/********* 锁定会议 ********/
+#define MeetingLock @"MeetingLock"
+
+/********* 解锁会议 ********/
+#define MeetingUnlock @"MeetingUnlock"
+
+/********* 会议变更主持人 ********/
+#define MeetingChangeCompere @"MeetingChangeCompere"
+
+/********* 会议变更主讲人 ********/
+#define MeetingChangeSpeaker @"MeetingChangeSpeaker"
+
+/********* 成员进入会议 ********/
+#define MeetingAddMember @"MeetingAddMember"
+
+/********* 成员离开会议 ********/
+#define MeetingDeleteMember @"MeetingDeleteMember"
+
+/********* 成员静音 ********/
+#define MeetingMemberMute @"MeetingMemberMute"
+
+/********* 成员取消静音 ********/
+#define MeetingMemberCancelMute @"MeetingMemberCancelMute"
+
+/********* 会议启用画板 ********/
+#define MeetingEnableSketchpad @"MeetingEnableSketchpad"
+
+/********* 会议禁用画板 ********/
+#define MeetingDisableSketchpad @"MeetingDisableSketchpad"
+
+/********* 会议成员启用画板 ********/
+#define MeetingMemberEnableSketchpad @"MeetingMemberEnableSketchpad"
+
+/********* 会议成员禁用画板  ********/
+#define MeetingMemberDisableSketchpad @"MeetingMemberDisableSketchpad"
+
+/********* 会议活动发言通知 ********/
+#define MeetingSpeakNotification @"MeetingSpeakNotification"
+
+/********* 会议共享开始 ********/
+#define MeetingSharedBegan @"MeetingSharedBegan"
+
+/********* 会议共享翻页 ********/
+#define MeetingSharedPage @"MeetingSharedPage"
+
+/********* 会议共享结束  ********/
+#define MeetingSharedEnd @"MeetingSharedEnd"
+
+
+
+
+
+
+
+
+
+
+
+
