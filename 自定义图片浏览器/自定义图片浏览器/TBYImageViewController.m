@@ -10,6 +10,7 @@
 #import "TBYimageCollectionViewCell.h"
 #import "TBYImageViewModel.h"
 #import "TopToolView.h"
+#import "BottomToolView.h"
 
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -24,6 +25,8 @@
 @property (nonatomic, strong) TBYImageViewModel * viewModel;
 
 @property (nonatomic, strong) TopToolView * topToolView;
+
+@property (nonatomic, strong) BottomToolView * bottomView;
 
 @property (nonatomic, assign) BOOL isShowTool;
 
@@ -51,6 +54,8 @@
     
     [self.view addSubview:self.topToolView];
     
+    [self.view addSubview:self.bottomView];
+    
     [self.viewModel handelCollection:self.imageCollectionView];
     
 }
@@ -76,6 +81,12 @@
         
     }];
     
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.right.bottom.equalTo(self.view);
+        make.height.mas_equalTo(adaptWidth(86));
+
+    }];
         
     [self.imageCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             
@@ -97,9 +108,7 @@
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
         flowLayout.itemSize = CGSizeMake(ScreenWidth, ScreenHeight);
-      
-        
-        
+
         flowLayout.minimumLineSpacing = 0;
         flowLayout.minimumInteritemSpacing = 0;
         
@@ -143,7 +152,7 @@
                             
                         }];
                         weakSelf.topToolView.alpha = 0;
-                        [weakSelf.topToolView.superview layoutSubviews];
+                        [weakSelf.topToolView layoutSubviews];
                     } completion:^(BOOL finished) {
                         
                         weakSelf.topToolView.hidden = YES;
@@ -158,7 +167,7 @@
                             
                         }];
                         weakSelf.topToolView.alpha = 0.8;
-                        [weakSelf.topToolView.superview layoutSubviews];
+                        [weakSelf.topToolView layoutSubviews];
                         
                     } completion:^(BOOL finished) {
                         
@@ -204,5 +213,16 @@
     }
     return _topToolView;
 }
+
+- (BottomToolView *)bottomView{
+    
+    if (!_bottomView) {
+        _bottomView = [[BottomToolView alloc] init];
+        
+    }
+    
+    return _bottomView;
+}
+
 
 @end

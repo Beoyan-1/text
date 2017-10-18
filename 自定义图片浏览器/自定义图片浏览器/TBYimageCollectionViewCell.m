@@ -66,7 +66,7 @@
         
         UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
         
-        [self.drawView addGestureRecognizer:tapGesture];
+        [self.contentView addGestureRecognizer:tapGesture];
     }
     
     return self;
@@ -89,9 +89,6 @@
     panGestureRecognizer.cancelsTouchesInView = YES;
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan || panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
         CGPoint translation = [panGestureRecognizer translationInView:view.superview];
-        
-        LCLog(@"%f",translation.x);
-        LCLog(@"%f",translation.y);
         
         [view setCenter:(CGPoint){view.center.x + translation.x, view.center.y + translation.y}];
         [panGestureRecognizer setTranslation:CGPointZero inView:view.superview];
@@ -140,7 +137,6 @@
             
           LCLog(@"%@",NSStringFromCGRect(newFrame));
             self.imageView.frame = newFrame;
-//            self.drawView.frame = self.imageView.bounds;
 
         }];
     }
@@ -150,6 +146,18 @@
     
     return self.imageView;
 }
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    
+    CGRect frame = self.imageView.frame;
+    
+    frame.origin.y = (self.imageScrollerView.frame.size.height - self.imageView.frame.size.height) > 0 ? (self.imageScrollerView.frame.size.height - self.imageView.frame.size.height) * 0.5 : 0;
+    frame.origin.x = (self.imageScrollerView.frame.size.width - self.imageView.frame.size.width) > 0 ? (self.imageScrollerView.frame.size.width - self.imageView.frame.size.width) * 0.5 : 0;
+    self.imageView.frame = frame;
+    
+    self.imageScrollerView.contentSize = CGSizeMake(self.imageView.frame.size.width + 30, self.imageView.frame.size.height + 30);
+}
+
 
 #pragma mark - private
 //拖拽后恢复成正确的位置

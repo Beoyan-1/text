@@ -27,7 +27,6 @@
 //    }
     
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-//    [UIViewController preferredStatusBarStyl]
     
 }
 - (IBAction)btn:(id)sender {

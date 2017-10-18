@@ -19,6 +19,9 @@
 		E29CBF101F959685005A0922 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E29CBF061F959658005A0922 /* ViewController+MASAdditions.m */; };
 		E29CBF131F95DE2E005A0922 /* TBYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E29CBF121F95DE2E005A0922 /* TBYScrollView.m */; };
 		E29CBF161F95E3F7005A0922 /* TopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = E29CBF151F95E3F7005A0922 /* TopToolView.m */; };
+		E29CBF1A1F962F47005A0922 /* BottomToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = E29CBF191F962F47005A0922 /* BottomToolView.m */; };
+		E29CBF1D1F96310C005A0922 /* BottomToolCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E29CBF1C1F96310C005A0922 /* BottomToolCollectionViewCell.m */; };
+		E29CBF351F96F335005A0922 /* BottomToolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E29CBF341F96F335005A0922 /* BottomToolModel.m */; };
 		E2D308731F8F82C6008188FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D308721F8F82C6008188FE /* AppDelegate.m */; };
 		E2D308761F8F82C6008188FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D308751F8F82C6008188FE /* ViewController.m */; };
 		E2D308791F8F82C6008188FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D308771F8F82C6008188FE /* Main.storyboard */; };
@@ -108,6 +111,12 @@
 		E29CBF141F95E3F7005A0922 /* TopToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopToolView.h; sourceTree = "<group>"; };
 		E29CBF151F95E3F7005A0922 /* TopToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopToolView.m; sourceTree = "<group>"; };
 		E29CBF171F95E7C9005A0922 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E29CBF181F962F47005A0922 /* BottomToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomToolView.h; sourceTree = "<group>"; };
+		E29CBF191F962F47005A0922 /* BottomToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottomToolView.m; sourceTree = "<group>"; };
+		E29CBF1B1F96310C005A0922 /* BottomToolCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomToolCollectionViewCell.h; sourceTree = "<group>"; };
+		E29CBF1C1F96310C005A0922 /* BottomToolCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottomToolCollectionViewCell.m; sourceTree = "<group>"; };
+		E29CBF331F96F335005A0922 /* BottomToolModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomToolModel.h; sourceTree = "<group>"; };
+		E29CBF341F96F335005A0922 /* BottomToolModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottomToolModel.m; sourceTree = "<group>"; };
 		E2D3086E1F8F82C6008188FE /* 自定义图片浏览器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "自定义图片浏览器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D308711F8F82C6008188FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E2D308721F8F82C6008188FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -279,6 +288,12 @@
 				E2D308D71F8F8775008188FE /* TBYimageCollectionViewCell.m */,
 				E29CBF141F95E3F7005A0922 /* TopToolView.h */,
 				E29CBF151F95E3F7005A0922 /* TopToolView.m */,
+				E29CBF181F962F47005A0922 /* BottomToolView.h */,
+				E29CBF191F962F47005A0922 /* BottomToolView.m */,
+				E29CBF1B1F96310C005A0922 /* BottomToolCollectionViewCell.h */,
+				E29CBF1C1F96310C005A0922 /* BottomToolCollectionViewCell.m */,
+				E29CBF331F96F335005A0922 /* BottomToolModel.h */,
+				E29CBF341F96F335005A0922 /* BottomToolModel.m */,
 				E29CBF111F95DE2E005A0922 /* TBYScrollView.h */,
 				E29CBF121F95DE2E005A0922 /* TBYScrollView.m */,
 				E2D3092D1F90B655008188FE /* UIColor+LCCategory.h */,
@@ -464,6 +479,7 @@
 				TargetAttributes = {
 					E2D3086D1F8F82C6008188FE = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					E2D308851F8F82C6008188FE = {
@@ -542,12 +558,14 @@
 				E29CBF0F1F959685005A0922 /* View+MASAdditions.m in Sources */,
 				E29CBF101F959685005A0922 /* ViewController+MASAdditions.m in Sources */,
 				E2D309C91F90E708008188FE /* HXAnnotationArrowEntity.m in Sources */,
+				E29CBF1A1F962F47005A0922 /* BottomToolView.m in Sources */,
 				E2D309CA1F90E708008188FE /* HXAnnotationBaseEntity.m in Sources */,
 				E2D309CB1F90E708008188FE /* HXAnnotationCustomEntity.m in Sources */,
 				E2D309CC1F90E708008188FE /* HXAnnotationLineEntity.m in Sources */,
 				E2D309CD1F90E708008188FE /* HXAnnotationMode.m in Sources */,
 				E2D309CE1F90E708008188FE /* HXAnnotationRectangularEntity.m in Sources */,
 				E2D309CF1F90E708008188FE /* HXAnnotationRoundEntity.m in Sources */,
+				E29CBF1D1F96310C005A0922 /* BottomToolCollectionViewCell.m in Sources */,
 				E2D309D01F90E708008188FE /* HXAnnotationRubberEntity.m in Sources */,
 				E2D309D11F90E708008188FE /* HXPointEntity.m in Sources */,
 				E2D309D21F90E708008188FE /* HXSVGEntity.m in Sources */,
@@ -565,6 +583,7 @@
 				E2D308EF1F905276008188FE /* 1234.png in Sources */,
 				E2D308ED1F905206008188FE /* 1233.png in Sources */,
 				E2D308E81F905136008188FE /* MWPhotoBrowser1.png in Sources */,
+				E29CBF351F96F335005A0922 /* BottomToolModel.m in Sources */,
 				E2D30A271F94CEBC008188FE /* TBYImageViewModel.m in Sources */,
 				E29CBF131F95DE2E005A0922 /* TBYScrollView.m in Sources */,
 				E2D308E91F905136008188FE /* MWPhotoBrowser2.png in Sources */,
@@ -738,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FK6F9LR33E;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/自定义图片浏览器/PrefixHeader.pch";
@@ -746,6 +766,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbysky.--------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -754,6 +776,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FK6F9LR33E;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/自定义图片浏览器/PrefixHeader.pch";
@@ -762,6 +785,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbysky.--------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
