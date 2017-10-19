@@ -12,6 +12,8 @@
 #import "TopToolView.h"
 #import "BottomToolView.h"
 
+#import "BottomToolSetView.h"
+
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -27,6 +29,8 @@
 @property (nonatomic, strong) TopToolView * topToolView;
 
 @property (nonatomic, strong) BottomToolView * bottomView;
+
+@property (nonatomic, strong) BottomToolSetView * setView;
 
 @property (nonatomic, assign) BOOL isShowTool;
 
@@ -58,6 +62,8 @@
     
     [self.viewModel handelCollection:self.imageCollectionView];
     
+    [self.view addSubview:self.setView];
+    
 }
 
 - (void)getData{
@@ -84,7 +90,7 @@
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.right.bottom.equalTo(self.view);
-        make.height.mas_equalTo(adaptWidth(86));
+        make.height.mas_equalTo(adaptWidth(44));
 
     }];
         
@@ -93,6 +99,14 @@
         make.left.right.top.bottom.equalTo(self.view);
             
     }];
+    
+    
+    [self.setView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.bottomView.mas_top);
+    }];
+    
 }
 
 
@@ -189,7 +203,7 @@
     if (!_topToolView) {
         _topToolView = [[TopToolView alloc] init];
         _topToolView.backgroundColor = textblackColor;
-        _topToolView.alpha = 0.8;
+        _topToolView.alpha = 0.96;
         WS(weakSelf)
         _topToolView.rightBlock = ^{
             
@@ -210,6 +224,12 @@
             
         };
         
+        _topToolView.cancleBlock = ^{
+          
+            
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        };
+        
     }
     return _topToolView;
 }
@@ -224,5 +244,12 @@
     return _bottomView;
 }
 
+- (BottomToolSetView *)setView{
+    
+    if (!_setView) {
+        _setView = [[BottomToolSetView alloc] init];
+    }
+    return _setView;
+}
 
 @end

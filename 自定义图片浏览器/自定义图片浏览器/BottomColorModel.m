@@ -1,44 +1,23 @@
 //
-//  HXAnnotationMode.m
-//  test
+//  BottomColorModel.m
+//  自定义图片浏览器
 //
-//  Created by 孙海平 on 2017/4/19.
-//  Copyright © 2017年 孙海平. All rights reserved.
+//  Created by 佟博研 on 2017/10/19.
+//  Copyright © 2017年 tby. All rights reserved.
 //
 
-#import "HXAnnotationMode.h"
+#import "BottomColorModel.h"
+
+@implementation BottomColorModel
 
 
-
-
-
-@implementation HXAnnotationMode
-
-@synthesize colorType = _colorType;
-
-
-#pragma mark get/set
-- (UIColor *)color
-{
-    if (!_color) {
-        _color = redBackgroundColor;
+- (instancetype)initWithColorType:(HXAnnotationColorType)colorType {
+    self = [super init];
+    if (self) {
+        
+        self.colorType = colorType;
     }
-    return _color;
-}
-- (CGFloat)lineWidth
-{
-    if (!_lineWidth) {
-        _lineWidth = 4;
-        _lineWidth = 4;
-    }
-    return _lineWidth;
-}
-- (HXAnnotationModeType)type
-{
-    if (!_type) {
-        _type = HXAnnotationModeTypeLine;
-    }
-    return _type;
+    return self;
 }
 
 - (void)setColorType:(HXAnnotationColorType)colorType{
@@ -85,31 +64,9 @@
             
             _color = kUIColorFromRGB(0x1b1b1b);
             break;
-
+            
         default:
             break;
     }
 }
-
-- (HXAnnotationColorType)colorType{
-    
-    
-    if (!_colorType) {
-        
-        _colorType = HXRedColorType;
-    }
-    return _colorType;
-}
-
-
-+(instancetype)annotationModeShare
-{
-    static HXAnnotationMode * mode = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        mode = [[HXAnnotationMode alloc]init];
-    });
-    return mode;
-}
-
 @end

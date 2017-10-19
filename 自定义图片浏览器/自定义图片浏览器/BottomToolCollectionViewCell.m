@@ -107,9 +107,10 @@
         
         self.descLabel.textColor = canNotPressColor;
         
-        self.iconImageView.image = [[UIImage imageNamed:model.iconImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        self.iconImageView.tintColor = kUIColorFromRGB(0x5e5e5e);
         
-        
+        self.iconImageView.image = [[UIImage imageNamed:model.iconImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.descLabel.textColor = kUIColorFromRGB(0x5e5e5e);
     }
     
 }

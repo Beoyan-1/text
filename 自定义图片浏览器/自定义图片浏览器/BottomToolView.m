@@ -133,7 +133,8 @@ static NSString *  itemCellReuseIdentifier = @"itemCellReuseIdentifier";
         _itemCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _itemCollectionView.delegate = self;
         _itemCollectionView.dataSource = self;
-        _itemCollectionView.backgroundColor = kUIColorFromRGB(0x08a1ef);
+        _itemCollectionView.backgroundColor = textblackColor;
+        _itemCollectionView.alpha = 0.96;
         [_itemCollectionView registerClass:[BottomToolCollectionViewCell class] forCellWithReuseIdentifier:itemCellReuseIdentifier];
     }
     return _itemCollectionView;

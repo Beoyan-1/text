@@ -22,6 +22,19 @@ typedef enum {
     HXAnnotationModeTypeZoom,//缩放
     HXAnnotationModeTypeNul,//空
 } HXAnnotationModeType;
+
+typedef enum : NSUInteger {
+    HXRedColorType,          //红色
+    HXOrangeColorType,       //橙色
+    HXYellorColorType,       //黄色
+    HXGreenColorType,        //绿色
+    HXBlueColorType,         //蓝色
+    HXPurpleColorType,       //紫色
+    HXWhiteColorType,        //白色
+    HXGrayColorType,         //灰色
+    HXBlackColorType,        //黑色
+} HXAnnotationColorType;
+
 @interface HXAnnotationMode : NSObject
 
 @property (nonatomic, strong) NSString * pid;
@@ -55,6 +68,13 @@ typedef enum {
 @property (nonatomic, assign) CGPoint endPoint;
 
 @property (nonatomic, assign) CGFloat height;
+
 @property (nonatomic, assign) CGFloat width;
+
+/**
+ 颜色类型
+ */
+@property (nonatomic, assign) HXAnnotationColorType colorType;
+
 + (instancetype)annotationModeShare;
 @end

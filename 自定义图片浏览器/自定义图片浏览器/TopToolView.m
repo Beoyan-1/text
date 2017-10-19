@@ -92,6 +92,9 @@
 
 - (void)cancleClick{
     
+    if (self.cancleBlock) {
+        self.cancleBlock();
+    }
     
 }
 
@@ -111,6 +114,9 @@
 
 - (void)moreClick{
     
+    if (self.moreBlock) {
+        self.moreBlock();
+    }
     
 }
 

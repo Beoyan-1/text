@@ -263,7 +263,7 @@ pj_log_wrapper_##level(arg); \
 //主题背景色
 #define mainBgColor  kUIColorFromRGB(0xeeeff3)
 
-#define APPColor [[HXSystemManager share] getSubjectColor]
+#define APPColor kUIColorFromRGB(0x08a1ef)
 
 //分割线色
 #define sepLineColor kUIColorFromRGB(0xf8f5f5)
