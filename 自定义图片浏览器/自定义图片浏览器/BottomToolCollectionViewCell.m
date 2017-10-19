@@ -105,8 +105,6 @@
         
         self.cololrView.hidden = YES;
         
-        self.descLabel.textColor = canNotPressColor;
-        
         self.iconImageView.tintColor = kUIColorFromRGB(0x5e5e5e);
         
         self.iconImageView.image = [[UIImage imageNamed:model.iconImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
