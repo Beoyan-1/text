@@ -9,10 +9,6 @@
 #import "TBYimageCollectionViewCell.h"
 #import "HXDrawView_S.h"
 #import "TBYScrollView.h"
-#import "Masonry.h"
-#define ScreenWidth [UIScreen mainScreen].bounds.size.width
-
-#define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
 #define maxsize 4
 
@@ -45,13 +41,7 @@
 
 @implementation TBYimageCollectionViewCell
 
-- (void)awakeFromNib {
-    
-    [super awakeFromNib];
-    
-  
-}
-
+#pragma mark - init
 - (instancetype)initWithFrame:(CGRect)frame{
     
     if (self = [super initWithFrame:frame]) {
@@ -134,13 +124,38 @@
         newFrame = [self handleScaleOverflow:newFrame];
         newFrame = [self handleBorderOverflow:newFrame];
         [UIView animateWithDuration:0.3 animations:^{
-            
-          LCLog(@"%@",NSStringFromCGRect(newFrame));
+    
             self.imageView.frame = newFrame;
 
         }];
     }
 }
+#pragma mark - HXDrawViewAnnotationDelegate
+
+/**
+ 撤销按钮改变状态代理
+ */
+- (void)drawView:(HXDrawView_S *)drawView changePreviousBtnstate:(BOOL)is{
+    
+    
+    
+}
+
+/**
+ 反向撤回
+ */
+- (void)drawView:(HXDrawView_S *)drawView changeNextBtnstate:(BOOL)is{
+    
+    
+    
+    
+    
+}
+
+
+
+
+#pragma mark - UIScrollViewDelegate
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     
@@ -150,12 +165,13 @@
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
     
     CGRect frame = self.imageView.frame;
-    
+
     frame.origin.y = (self.imageScrollerView.frame.size.height - self.imageView.frame.size.height) > 0 ? (self.imageScrollerView.frame.size.height - self.imageView.frame.size.height) * 0.5 : 0;
     frame.origin.x = (self.imageScrollerView.frame.size.width - self.imageView.frame.size.width) > 0 ? (self.imageScrollerView.frame.size.width - self.imageView.frame.size.width) * 0.5 : 0;
     self.imageView.frame = frame;
+
+    self.imageScrollerView.contentSize = CGSizeMake(self.imageView.frame.size.width, self.imageView.frame.size.height);
     
-    self.imageScrollerView.contentSize = CGSizeMake(self.imageView.frame.size.width + 30, self.imageView.frame.size.height + 30);
 }
 
 
@@ -165,6 +181,7 @@
     
     // horizontally
     if (newFrame.origin.x > self.cropFrame.origin.x) newFrame.origin.x = self.cropFrame.origin.x;
+    
     if (CGRectGetMaxX(newFrame) < self.cropFrame.size.width + self.cropFrame.origin.x)
         newFrame.origin.x = self.cropFrame.size.width - newFrame.size.width + self.cropFrame.origin.x;
     // vertically

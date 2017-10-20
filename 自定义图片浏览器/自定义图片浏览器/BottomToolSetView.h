@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "BottomToolModel.h"
 
+typedef void(^reload)(void);
+
 @interface BottomToolSetView : UIView
 
 
 @property (nonatomic, strong) BottomToolModel * model;
+
+@property (nonatomic, copy) reload reloadBlock;
 
 @end

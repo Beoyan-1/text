@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BottomToolCollectionViewCell.h"
+
+typedef void(^touchIcon)(BottomToolModel * model);
 
 @interface BottomToolView : UIView
+
+
+@property (nonatomic, copy) touchIcon touchIconBlock;
+
+- (void)reloadColor;
 
 @end

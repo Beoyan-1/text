@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 typedef enum {
-    HXAnnotationModeTypeLine=0,//直线
+    HXAnnotationModeTypeNul,//空
+    HXAnnotationModeTypeLine,//直线
     HXAnnotationModeTypeArrow,//箭头
     HXAnnotationModeTypeCustom,//画笔
     HXAnnotationModeTypeRectangular,//矩形
@@ -20,7 +21,7 @@ typedef enum {
     HXAnnotationModeTypeVoice,//语音
     HXAnnotationModeTypeVideo,//视频
     HXAnnotationModeTypeZoom,//缩放
-    HXAnnotationModeTypeNul,//空
+    
 } HXAnnotationModeType;
 
 typedef enum : NSUInteger {

@@ -11,14 +11,7 @@
 #import "TBYImageViewModel.h"
 #import "TopToolView.h"
 #import "BottomToolView.h"
-
 #import "BottomToolSetView.h"
-
-#define ScreenWidth [UIScreen mainScreen].bounds.size.width
-
-#define ScreenHeight [UIScreen mainScreen].bounds.size.height
-
-
 
 @interface TBYImageViewController ()
 
@@ -27,6 +20,8 @@
 @property (nonatomic, strong) TBYImageViewModel * viewModel;
 
 @property (nonatomic, strong) TopToolView * topToolView;
+
+@property (nonatomic, strong) UIView * bottomToolView;
 
 @property (nonatomic, strong) BottomToolView * bottomView;
 
@@ -45,9 +40,9 @@
     self.currentRow = 0;
     self.isShowTool = YES;
     [self initView];
+    [self layout];
     [self getData];
     
-    [self preferredStatusBarStyle];
 }
 
 - (void)initView{
@@ -58,17 +53,20 @@
     
     [self.view addSubview:self.topToolView];
     
-    [self.view addSubview:self.bottomView];
+    [self.bottomToolView addSubview:self.bottomView];
     
     [self.viewModel handelCollection:self.imageCollectionView];
     
-    [self.view addSubview:self.setView];
+    [self.bottomToolView addSubview:self.setView];
+    
+    [self.view addSubview:self.bottomToolView];
     
 }
 
 - (void)getData{
     
     WS(weakSelf)
+    
     [self.viewModel initDataWithArr:self.imageArr complete:^{
         
         [weakSelf.imageCollectionView reloadData];
@@ -76,10 +74,7 @@
     
 }
 
-- (void)viewDidLayoutSubviews{
-    
-    [super viewDidLayoutSubviews];
-    
+- (void)layout{
     [self.topToolView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.right.top.equalTo(self.view);
@@ -87,26 +82,41 @@
         
     }];
     
-    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.left.right.bottom.equalTo(self.view);
-        make.height.mas_equalTo(adaptWidth(44));
-
-    }];
-        
+    
+    
     [self.imageCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
+        
         make.left.right.top.bottom.equalTo(self.view);
-            
+        
     }];
     
     
     [self.setView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.left.right.equalTo(self.view);
+        
+        make.left.right.top.equalTo(self.bottomToolView);
         make.bottom.equalTo(self.bottomView.mas_top);
+        make.height.mas_equalTo(0.1);
     }];
     
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.right.bottom.equalTo(self.bottomToolView);
+        make.height.mas_equalTo(adaptWidth(44));
+    }];
+    
+    [self.bottomToolView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view);
+        
+    }];
+    
+    
+}
+
+- (void)viewDidLayoutSubviews{
+    
+    [super viewDidLayoutSubviews];
+    
+  
 }
 
 
@@ -121,7 +131,7 @@
         
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
-        flowLayout.itemSize = CGSizeMake(ScreenWidth, ScreenHeight);
+        flowLayout.itemSize = CGSizeMake(SCREENW, SCREENH);
 
         flowLayout.minimumLineSpacing = 0;
         flowLayout.minimumInteritemSpacing = 0;
@@ -167,12 +177,22 @@
                         }];
                         weakSelf.topToolView.alpha = 0;
                         [weakSelf.topToolView layoutSubviews];
+                        
+                        [weakSelf.bottomToolView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                            make.left.right.bottom.equalTo(weakSelf.view);
+                            make.height.mas_equalTo(0.1);
+                        }];
+                        
+                        weakSelf.bottomToolView.hidden = YES;
+                        weakSelf.topToolView.hidden = YES;
+                        
                     } completion:^(BOOL finished) {
                         
-                        weakSelf.topToolView.hidden = YES;
+                        
                     }];
 
                 }else{
+                    
                     [UIView animateWithDuration:0.3 animations:^{
                         
                         [weakSelf.topToolView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -182,10 +202,15 @@
                         }];
                         weakSelf.topToolView.alpha = 0.8;
                         [weakSelf.topToolView layoutSubviews];
+                        weakSelf.bottomToolView.hidden = NO;
+                        weakSelf.topToolView.hidden = NO;
+                        [weakSelf.bottomToolView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                            make.left.right.bottom.equalTo(weakSelf.view);
+                        }];
                         
                     } completion:^(BOOL finished) {
                         
-                        weakSelf.topToolView.hidden = NO;
+                        
                     }];
   
                 }
@@ -225,8 +250,6 @@
         };
         
         _topToolView.cancleBlock = ^{
-          
-            
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
         };
         
@@ -237,7 +260,27 @@
 - (BottomToolView *)bottomView{
     
     if (!_bottomView) {
+        
         _bottomView = [[BottomToolView alloc] init];
+        
+        WS(weakSelf);
+        _bottomView.touchIconBlock = ^(BottomToolModel *model) {
+            
+            weakSelf.setView.model = model;
+            
+            weakSelf.setView.hidden = NO;
+            
+            [UIView animateWithDuration:0.3 animations:^{
+               
+                [weakSelf.setView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                    
+                    make.left.right.top.equalTo(weakSelf.bottomToolView);
+                    make.bottom.equalTo(weakSelf.bottomView.mas_top);
+                    
+                }];
+                
+            }];
+        };
         
     }
     
@@ -247,9 +290,29 @@
 - (BottomToolSetView *)setView{
     
     if (!_setView) {
+        
         _setView = [[BottomToolSetView alloc] init];
+        
+        _setView.hidden = YES;
+        
+        WS(weakSelf)
+        
+        _setView.reloadBlock = ^{
+            
+            [weakSelf.bottomView reloadColor];
+        };
     }
     return _setView;
+}
+
+- (UIView *)bottomToolView{
+    
+    if (!_bottomToolView) {
+        
+        _bottomToolView  = [[UIView alloc] init];
+        
+    }
+    return _bottomToolView;
 }
 
 @end

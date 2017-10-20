@@ -33,7 +33,7 @@
             break;
         case HXOrangeColorType:
             
-            _color = kUIColorFromRGB(0xffa5f);
+            _color = kUIColorFromRGB(0xffaa5f);
             
             break;
         case HXYellorColorType:

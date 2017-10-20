@@ -29,17 +29,16 @@
 {
     if (!_lineWidth) {
         _lineWidth = 4;
-        _lineWidth = 4;
     }
     return _lineWidth;
 }
-- (HXAnnotationModeType)type
-{
-    if (!_type) {
-        _type = HXAnnotationModeTypeLine;
-    }
-    return _type;
-}
+//- (HXAnnotationModeType)type
+//{
+//    if (!_type) {
+//        _type = HXAnnotationModeTypeNul;
+//    }
+//    return _type;
+//}
 
 - (void)setColorType:(HXAnnotationColorType)colorType{
     
@@ -54,7 +53,7 @@
             break;
         case HXOrangeColorType:
             
-            _color = kUIColorFromRGB(0xffa5f);
+            _color = kUIColorFromRGB(0xffaa5f);
             
             break;
         case HXYellorColorType:
@@ -91,15 +90,15 @@
     }
 }
 
-- (HXAnnotationColorType)colorType{
-    
-    
-    if (!_colorType) {
-        
-        _colorType = HXRedColorType;
-    }
-    return _colorType;
-}
+//- (HXAnnotationColorType)colorType{
+//    
+//    
+//    if (!_colorType) {
+//        
+//        _colorType = HXRedColorType;
+//    }
+//    return _colorType;
+//}
 
 
 +(instancetype)annotationModeShare

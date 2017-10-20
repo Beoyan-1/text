@@ -13,9 +13,11 @@
 
 - (UIColor *)selectColor{
     
-    if (!_selectColor) {
+//    if (!_selectColor) {
+    
         _selectColor = [HXAnnotationMode annotationModeShare].color;
-    }
+        
+//    }
     
     return _selectColor;
 }

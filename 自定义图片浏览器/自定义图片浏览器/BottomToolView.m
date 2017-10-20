@@ -7,7 +7,7 @@
 //
 
 #import "BottomToolView.h"
-#import "BottomToolCollectionViewCell.h"
+
 
 
 @interface BottomToolView()<UICollectionViewDelegate,UICollectionViewDataSource>
@@ -41,7 +41,7 @@ static NSString *  itemCellReuseIdentifier = @"itemCellReuseIdentifier";
     BottomToolModel * toolModel = [[BottomToolModel alloc] init];
     
     toolModel.svgType = svgsettype;
-    toolModel.isSelect = YES;
+    toolModel.isSelect = NO;
     
     BottomToolModel * toolModel1 = [[BottomToolModel alloc] init];
     toolModel1.svgType = svgbrushtype;
@@ -81,6 +81,11 @@ static NSString *  itemCellReuseIdentifier = @"itemCellReuseIdentifier";
     
 }
 
+- (void)reloadColor{
+    
+    [self.itemCollectionView reloadData];
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -112,6 +117,11 @@ static NSString *  itemCellReuseIdentifier = @"itemCellReuseIdentifier";
             model.isSelect = YES;
             
         }
+    }
+    BottomToolModel * model1 = self.bottomArr[indexPath.row];
+    
+    if (self.touchIconBlock) {
+        self.touchIconBlock(model1);
     }
     
     [self.itemCollectionView reloadData];

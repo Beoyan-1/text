@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20440111F98560F00A3A38A /* ShapeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E20440101F98560F00A3A38A /* ShapeCollectionViewCell.m */; };
+		E20440141F9872F700A3A38A /* BottomShapeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E20440131F9872F700A3A38A /* BottomShapeModel.m */; };
+		E20440171F98BE2900A3A38A /* UIImage+LCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E20440151F98BE2800A3A38A /* UIImage+LCCategory.m */; };
+		E204401A1F99823400A3A38A /* ToolRoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = E20440191F99823400A3A38A /* ToolRoundView.m */; };
 		E207D8341F983B8A001D067A /* BottomColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E207D8331F983B8A001D067A /* BottomColorModel.m */; };
 		E28771E71F97408C0028FF97 /* ColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E28771E61F97408C0028FF97 /* ColorCollectionViewCell.m */; };
 		E28771EA1F97445C0028FF97 /* BottomToolSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = E28771E91F97445C0028FF97 /* BottomToolSetView.m */; };
@@ -84,6 +88,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E204400F1F98560F00A3A38A /* ShapeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeCollectionViewCell.h; sourceTree = "<group>"; };
+		E20440101F98560F00A3A38A /* ShapeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeCollectionViewCell.m; sourceTree = "<group>"; };
+		E20440121F9872F700A3A38A /* BottomShapeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomShapeModel.h; sourceTree = "<group>"; };
+		E20440131F9872F700A3A38A /* BottomShapeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottomShapeModel.m; sourceTree = "<group>"; };
+		E20440151F98BE2800A3A38A /* UIImage+LCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LCCategory.m"; sourceTree = "<group>"; };
+		E20440161F98BE2900A3A38A /* UIImage+LCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LCCategory.h"; sourceTree = "<group>"; };
+		E20440181F99823400A3A38A /* ToolRoundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolRoundView.h; sourceTree = "<group>"; };
+		E20440191F99823400A3A38A /* ToolRoundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolRoundView.m; sourceTree = "<group>"; };
 		E207D8321F983B8A001D067A /* BottomColorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomColorModel.h; sourceTree = "<group>"; };
 		E207D8331F983B8A001D067A /* BottomColorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottomColorModel.m; sourceTree = "<group>"; };
 		E28771E51F97408C0028FF97 /* ColorCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorCollectionViewCell.h; sourceTree = "<group>"; };
@@ -303,14 +315,22 @@
 				E29CBF1C1F96310C005A0922 /* BottomToolCollectionViewCell.m */,
 				E29CBF331F96F335005A0922 /* BottomToolModel.h */,
 				E29CBF341F96F335005A0922 /* BottomToolModel.m */,
-				E28771E51F97408C0028FF97 /* ColorCollectionViewCell.h */,
-				E28771E61F97408C0028FF97 /* ColorCollectionViewCell.m */,
-				E207D8321F983B8A001D067A /* BottomColorModel.h */,
-				E207D8331F983B8A001D067A /* BottomColorModel.m */,
 				E28771E81F97445C0028FF97 /* BottomToolSetView.h */,
 				E28771E91F97445C0028FF97 /* BottomToolSetView.m */,
+				E20440181F99823400A3A38A /* ToolRoundView.h */,
+				E20440191F99823400A3A38A /* ToolRoundView.m */,
+				E204400F1F98560F00A3A38A /* ShapeCollectionViewCell.h */,
+				E20440101F98560F00A3A38A /* ShapeCollectionViewCell.m */,
+				E28771E51F97408C0028FF97 /* ColorCollectionViewCell.h */,
+				E28771E61F97408C0028FF97 /* ColorCollectionViewCell.m */,
+				E20440121F9872F700A3A38A /* BottomShapeModel.h */,
+				E20440131F9872F700A3A38A /* BottomShapeModel.m */,
+				E207D8321F983B8A001D067A /* BottomColorModel.h */,
+				E207D8331F983B8A001D067A /* BottomColorModel.m */,
 				E29CBF111F95DE2E005A0922 /* TBYScrollView.h */,
 				E29CBF121F95DE2E005A0922 /* TBYScrollView.m */,
+				E20440161F98BE2900A3A38A /* UIImage+LCCategory.h */,
+				E20440151F98BE2800A3A38A /* UIImage+LCCategory.m */,
 				E2D3092D1F90B655008188FE /* UIColor+LCCategory.h */,
 				E2D3092C1F90B655008188FE /* UIColor+LCCategory.m */,
 				E2D3095D1F90B729008188FE /* UIView+LCCategory.h */,
@@ -564,7 +584,9 @@
 				E29CBF071F959685005A0922 /* MASCompositeConstraint.m in Sources */,
 				E29CBF081F959685005A0922 /* MASConstraint.m in Sources */,
 				E29CBF161F95E3F7005A0922 /* TopToolView.m in Sources */,
+				E204401A1F99823400A3A38A /* ToolRoundView.m in Sources */,
 				E29CBF091F959685005A0922 /* MASConstraintMaker.m in Sources */,
+				E20440141F9872F700A3A38A /* BottomShapeModel.m in Sources */,
 				E29CBF0A1F959685005A0922 /* MASLayoutConstraint.m in Sources */,
 				E29CBF0B1F959685005A0922 /* MASViewAttribute.m in Sources */,
 				E29CBF0C1F959685005A0922 /* MASViewConstraint.m in Sources */,
@@ -572,6 +594,7 @@
 				E29CBF0E1F959685005A0922 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				E29CBF0F1F959685005A0922 /* View+MASAdditions.m in Sources */,
 				E29CBF101F959685005A0922 /* ViewController+MASAdditions.m in Sources */,
+				E20440111F98560F00A3A38A /* ShapeCollectionViewCell.m in Sources */,
 				E2D309C91F90E708008188FE /* HXAnnotationArrowEntity.m in Sources */,
 				E28771E71F97408C0028FF97 /* ColorCollectionViewCell.m in Sources */,
 				E29CBF1A1F962F47005A0922 /* BottomToolView.m in Sources */,
@@ -586,6 +609,7 @@
 				E28771EA1F97445C0028FF97 /* BottomToolSetView.m in Sources */,
 				E2D309D11F90E708008188FE /* HXPointEntity.m in Sources */,
 				E2D309D21F90E708008188FE /* HXSVGEntity.m in Sources */,
+				E20440171F98BE2900A3A38A /* UIImage+LCCategory.m in Sources */,
 				E2D309D31F90E708008188FE /* HXUndoEntity.m in Sources */,
 				E2D309D41F90E708008188FE /* HXDrawView_S.m in Sources */,
 				E2D309D51F90E708008188FE /* HXSVGAFmanager.m in Sources */,

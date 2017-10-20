@@ -53,6 +53,7 @@ static NSString * cellReuseIdentifier = @"cellReuseIdentifier";
     TBYimageCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellReuseIdentifier forIndexPath:indexPath];
     
     WS(weakSelf)
+    
     cell.touchBlock = ^{
         
         if (weakSelf.tapBlock) {

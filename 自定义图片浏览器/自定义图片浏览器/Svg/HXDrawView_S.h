@@ -28,7 +28,14 @@
  */
 - (void)annotationUncheck;
 
+/**
+ 上一步
+ */
 - (void)previousAction;
+
+/**
+ 下一步
+ */
 - (void)nextAction;
 @end
 
